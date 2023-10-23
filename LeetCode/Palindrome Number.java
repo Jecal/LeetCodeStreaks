@@ -2,18 +2,18 @@ class Solution {
     public boolean isPalindrome(int x) {
         int number = x;
         String conNumber = String.valueOf(number);
-        int length = conNumber.length();
-        if (length < 2) {
+        int len = conNumber.length();
+        if (len < 2) {
             return true;
         } else {
-            int left = 0;
-            int right = length - 1;
-            while (left < right) {
-                if ((conNumber.charAt(left) != conNumber.charAt(right))) {
+            int l = 0;
+            int r = len - 1;
+            while (l < r) {
+                if ((conNumber.charAt(l) != conNumber.charAt(r))) {
                     return false;
                 }
-                left++;
-                right--;
+                l++;
+                r--;
             }
             return true;
         }
