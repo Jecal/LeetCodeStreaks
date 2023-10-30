@@ -5,7 +5,7 @@ class Solution {
         int[] sol;
         if (len < 3) {
             if (nums[0] + nums[1] == target) {
-                sol = new int[] { nums[0], nums[1] };
+                sol = new int[] { 0, 1 };
                 return sol;
             } else {
                 sol = new int[] {};
@@ -13,18 +13,14 @@ class Solution {
             }
         } else {
             for (int i = 0; i < len; i++) {
-                for (int j = 0; j < len; j++) {
-                    if (i != j) {
-                        if (nums[i] + nums[j] == target) {
-                            sol = new int[] { nums[i], nums[j] };
-                            return sol;
-                        }
+                for (int j = i + 1; j < len; j++) {
+                    if (nums[i] + nums[j] == target) {
+                        sol = new int[] { i, j };
+                        return sol;
                     }
-
                 }
             }
             return empty;
         }
-
     }
 }
